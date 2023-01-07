@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hayaath_24x7/core/Colors/mycolors.dart';
-import 'package:hayaath_24x7/view/appointment/appointment_page.dart';
-import 'package:hayaath_24x7/view/articles/articles.dart';
-import 'package:hayaath_24x7/view/history/historypage.dart';
-import 'package:hayaath_24x7/view/home/home_page.dart';
+import '../../core/Colors/mycolors.dart';
+import '../appointment/appointment_page.dart';
+import '../articles/articles.dart';
+import '../history/historypage.dart';
+import '../home/home_page.dart';
 
 class MybottomNavBar extends StatefulWidget {
   const MybottomNavBar({super.key});
@@ -15,16 +15,16 @@ class MybottomNavBar extends StatefulWidget {
 }
 
 class MybottomNavBarState extends State<MybottomNavBar> {
-  var currentIndex = 0;
-  final _pages = [
+  int currentIndex = 0;
+  final List<StatelessWidget> _pages = [
     const HomePage(),
     const AppoinmentPage(),
     const HistoryPage(),
-    const Article_Page()
+    const ArticlePage()
   ];
   @override
   Widget build(BuildContext context) {
-    double displayWidth = MediaQuery.of(context).size.width;
+    final double displayWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -38,7 +38,7 @@ class MybottomNavBarState extends State<MybottomNavBar> {
           width: double.infinity,
           decoration: BoxDecoration(
             color: Colors.white,
-            boxShadow: [
+            boxShadow:  [
               BoxShadow(
                 color: rrBlack.withOpacity(.1),
                 blurRadius: 30,
@@ -51,7 +51,7 @@ class MybottomNavBarState extends State<MybottomNavBar> {
             itemCount: 4,
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(horizontal: displayWidth * .02),
-            itemBuilder: (context, index) => InkWell(
+            itemBuilder: (BuildContext context, int index) => InkWell(
               onTap: () {
                 setState(() {
                   currentIndex = index;

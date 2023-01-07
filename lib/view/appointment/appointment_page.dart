@@ -5,6 +5,6 @@ class AppoinmentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: const Text('AppoinmentPage'),);
+    return const Text('AppoinmentPage');
   }
 }
