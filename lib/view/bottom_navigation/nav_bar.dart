@@ -1,3 +1,5 @@
+// ignore_for_file: always_specify_types
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,6 +18,7 @@ class MybottomNavBar extends StatefulWidget {
 
 class MybottomNavBarState extends State<MybottomNavBar> {
   int currentIndex = 0;
+
   final List<StatelessWidget> _pages = [
     const HomePage(),
     const AppoinmentPage(),
@@ -28,7 +31,7 @@ class MybottomNavBarState extends State<MybottomNavBar> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          color: rrPremiumBlue,
+            color: rrWhite,
             height: MediaQuery.of(context).size.height,
             width: double.infinity,
             child: _pages[currentIndex]),
@@ -38,7 +41,7 @@ class MybottomNavBarState extends State<MybottomNavBar> {
           width: double.infinity,
           decoration: BoxDecoration(
             color: Colors.white,
-            boxShadow:  [
+            boxShadow: [
               BoxShadow(
                 color: rrBlack.withOpacity(.1),
                 blurRadius: 30,

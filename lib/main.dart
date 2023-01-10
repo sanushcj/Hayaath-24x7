@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
-import 'view/bottom_navigation/nav_bar.dart';
+import 'package:get/get.dart';
+import 'view/splash/splash_screen.dart';
+
 void main(List<String> args) async {
-   runApp(const MyApp());
+   WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
+ 
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: MybottomNavBar(),);
+    return   GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MySplashScreen(),
+    );
   }
 }
