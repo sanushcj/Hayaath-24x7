@@ -8,3 +8,4 @@ SizedBox rrheight10 = const SizedBox(height: 10,);
 SizedBox rrWidth10 = const SizedBox(width: 10,);
 SizedBox rrWidth15 = const SizedBox(width: 15,);
 SizedBox rrWidth20 = const SizedBox(width: 20,);
+SizedBox rrWidth5 = const SizedBox(width: 5,);

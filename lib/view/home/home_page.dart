@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hayaath_24x7/view/home/widgets/userprofile.dart';
-
-import '../../core/Colors/mycolors.dart';
-import '../../core/constants/constants.dart';
+import 'widgets/homeapp_bar.dart.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,7 +14,7 @@ class HomePage extends StatelessWidget {
         width: double.infinity,
         child: Column(
           children: const <Widget>[
-            UserProfile(),
+            HomeAppBar(),
           ],
         ),
       ),
