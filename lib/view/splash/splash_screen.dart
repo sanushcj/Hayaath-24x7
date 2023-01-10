@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/splash_controller.dart';
@@ -6,9 +8,9 @@ import '../../core/constants/constants.dart';
 
 // import 'Animation/loading.dart';
 class MySplashScreen extends StatelessWidget {
-   MySplashScreen({super.key});
+  MySplashScreen({super.key});
 
-SplashScreenController splashController = Get.put(SplashScreenController());
+  SplashScreenController splashController = Get.put(SplashScreenController());
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +40,4 @@ SplashScreenController splashController = Get.put(SplashScreenController());
       ),
     );
   }
-
-  
 }

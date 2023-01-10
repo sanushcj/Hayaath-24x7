@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/Colors/mycolors.dart';
 import '../../../core/constants/constants.dart';
 
@@ -52,14 +51,20 @@ class NotiAndFav extends StatelessWidget {
     return SizedBox(
       width: 100,
       child: Row(
-        children: <Widget> [
+        children: <Widget>[
           IconButton(
             onPressed: () {},
-            icon: const Icon(CupertinoIcons.bell,size: 32,),
+            icon: const Icon(
+              CupertinoIcons.bell,
+              size: 32,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(CupertinoIcons.heart,size: 32,),
+            icon: const Icon(
+              CupertinoIcons.heart,
+              size: 32,
+            ),
           )
         ],
       ),
