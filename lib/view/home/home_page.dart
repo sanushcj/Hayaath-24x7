@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import '../../core/constants/constants.dart';
-import 'widgets/carosal.dart';
 import 'widgets/appbar_home.dart';
-import 'widgets/doctor_speciality.dart';
+import 'widgets/carosal.dart';
 import 'widgets/row__doctorspeciality.dart';
 import 'widgets/small_title.dart';
 
