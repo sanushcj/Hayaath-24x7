@@ -1,18 +1,22 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import '../../../core/Colors/mycolors.dart';
 
 class CurosalSliderHome extends StatelessWidget {
   const CurosalSliderHome({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
-      items: imagetoCarosal(),
-      options: CarouselOptions(
-        enlargeCenterPage: true,
-        autoPlay: true,
-        aspectRatio: 18 / 8,
+    return SizedBox(
+      width: double.infinity,
+      height: MediaQuery.of(context).size.height / 4,
+      child: CarouselSlider(
+        items: imagetoCarosal(),
+        options: CarouselOptions(
+          viewportFraction: 1,
+          enlargeCenterPage: true,
+          autoPlay: true,
+          aspectRatio: 18 / 8,
+        ),
       ),
     );
   }
@@ -30,12 +34,6 @@ class CurosalSliderHome extends StatelessWidget {
                   ),
                   fit: BoxFit.cover,
                 ),
-                boxShadow: const <BoxShadow>[
-                  BoxShadow(
-                    offset: Offset(0.0, 1.0), //(x,y)
-                    blurRadius: 6.0,
-                  ),
-                ],
               ),
             ))
         .toList();

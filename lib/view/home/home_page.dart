@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import '../../core/constants/constants.dart';
 import 'widgets/carosal.dart';
+import 'widgets/appbar_home.dart';
 import 'widgets/doctor_speciality.dart';
-import 'widgets/homeapp_bar.dart.dart';
+import 'widgets/row__doctorspeciality.dart';
 import 'widgets/small_title.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,9 +14,10 @@ class HomePage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        width: double.infinity,
+      //  height: MediaQuery.of(context).size.height,
+      //  width: double.infinity,
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             const HomeAppBar(),
             rrheight20,
@@ -29,16 +31,10 @@ class HomePage extends StatelessWidget {
             const SmallTitle(
               title: 'Doctor Speciality',
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children:  <Widget> [
-                DoctorSpeciality(docIcon: CupertinoIcons.group_solid,title: 'General',nextpage: HomePage()),
-              ],
-            )
+             const RowIconDoctorSpeciality()
           ],
         ),
       ),
     );
   }
 }
-
-

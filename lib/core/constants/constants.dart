@@ -4,6 +4,7 @@ SizedBox rrheight20 = const SizedBox(height: 20,);
 SizedBox rrheight50 = const SizedBox(height: 200,);
 SizedBox rrheight100 = const SizedBox(height: 100,);
 SizedBox rrheight10 = const SizedBox(height: 10,);
+SizedBox rrheight05 = const SizedBox(height: 05,);
 
 SizedBox rrWidth10 = const SizedBox(width: 10,);
 SizedBox rrWidth15 = const SizedBox(width: 15,);

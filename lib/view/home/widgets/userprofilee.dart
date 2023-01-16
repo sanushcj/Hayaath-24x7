@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/Colors/mycolors.dart';
 import '../../../core/constants/constants.dart';
 
@@ -10,9 +11,13 @@ class UserProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      alignment: Alignment.center,
       width: 150,
+      height: 150,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           const CircleAvatar(
             backgroundImage: NetworkImage(
@@ -23,6 +28,7 @@ class UserProfile extends StatelessWidget {
           ),
           rrWidth10,
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[
               Text(
                 'Good Morning 👋',
@@ -49,8 +55,11 @@ class NotiAndFav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      height: 100,
       width: 100,
       child: Row(
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           IconButton(
             onPressed: () {},

@@ -1,56 +1,59 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/Colors/mycolors.dart';
 
-class DoctorSpeciality extends StatelessWidget {
-   DoctorSpeciality({ required this.title,this.nextpage,required this.docIcon,
+class IconDoctorSpeciality extends StatelessWidget {
+  IconDoctorSpeciality({
+    required this.title,
+    this.nextpage,
+    required this.docIcon,
     super.key,
   });
 
-String title;
-IconData docIcon;
-StatelessWidget? nextpage;
+  String title;
+  IconData docIcon;
+  StatelessWidget? nextpage;
 
   @override
-  Widget build(BuildContext context)  {
+  Widget build(BuildContext context) {
     return InkWell(
       onTap: gotoPage,
       child: SizedBox(
-        height: 90,
+        height: 125,
         width: 90,
         child: Column(
           children: <Widget>[
-            SizedBox(
+            Container(
+              margin: const EdgeInsets.all(10),
               height: 70,
               width: 70,
               child: Stack(
+                alignment: AlignmentDirectional.center,
                 children: <Widget>[
                   CircleAvatar(
-                    radius: 40,
-                    backgroundColor: rrGrey.withOpacity(0.3),
+                    radius: 30,
+                    backgroundColor: rrPremiumBlue.withOpacity(0.2),
                   ),
-                   Align(
+                  Align(
                       child: Icon(
                     docIcon,
-                    size: 40,
+                    size: 25,
                     color: rrPremiumBlue,
                   )),
                 ],
               ),
             ),
-             Text(title),
+            Text(title),
           ],
         ),
       ),
     );
   }
- Future<void> gotoPage()async {
+
+  Future<void> gotoPage() async {
     await Get.to(nextpage);
   }
 }

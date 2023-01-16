@@ -31,10 +31,12 @@ class MybottomNavBarState extends State<MybottomNavBar> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-            color: rrWhite,
-            height: MediaQuery.of(context).size.height,
-            width: double.infinity,
-            child: _pages[currentIndex]),
+          color: rrWhite,
+          height: MediaQuery.of(context).size.height,
+          width: double.infinity,
+          child: _pages[currentIndex],
+        ),
+        
         bottomNavigationBar: Container(
           margin: EdgeInsets.all(displayWidth * .02),
           height: displayWidth * .150,

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import '../../../core/Colors/mycolors.dart';
 
@@ -12,9 +11,10 @@ class SmallTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
+      height: 50,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children:  <Widget>[
+        children: <Widget>[
           Text(
             title,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
