@@ -15,16 +15,24 @@ class RowIconDoctorSpeciality extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       // color: rrGrey,
-      height: MediaQuery.of(context).size.height/3.5,
+      height: MediaQuery.of(context).size.height/3.3,
       width: double.infinity,
       child: Column(
         children: <Widget> [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children:  <Widget> [
-              IconDoctorSpeciality(docIcon: CupertinoIcons.group_solid,title: 'General',nextpage: const HomePage()),
-               IconDoctorSpeciality(docIcon: FontAwesomeIcons.tooth,title: 'Dental',nextpage: const HomePage()),
-                IconDoctorSpeciality(docIcon: FontAwesomeIcons.solidEye,title: 'Ophthal',nextpage: const HomePage()),
-               IconDoctorSpeciality(docIcon: FontAwesomeIcons.nutritionix,title: 'Nutrition',nextpage: const HomePage()),
+              IconDoctorSpeciality(docIcon: CupertinoIcons.group_solid,title: 'General',
+              // nextpage: const HomePage(),
+              ),
+               IconDoctorSpeciality(docIcon: FontAwesomeIcons.tooth,title: 'Dental',
+              //  nextpage: const HomePage(),
+               ),
+                IconDoctorSpeciality(docIcon: FontAwesomeIcons.solidEye,title: 'Ophthal',
+                // nextpage: const HomePage(),
+                ),
+               IconDoctorSpeciality(docIcon: FontAwesomeIcons.nutritionix,title: 'Nutrition',
+              //  nextpage: const HomePage(),
+               ),
             ],
           ),
           rrheight05,
