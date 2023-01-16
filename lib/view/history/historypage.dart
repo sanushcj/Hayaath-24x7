@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
+import '../../core/Colors/mycolors.dart';
+import '../../core/constants/constants.dart';
 import '../Widgets/appbar_public.dart';
 
 class HistoryPage extends StatelessWidget {
@@ -7,11 +10,14 @@ class HistoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
- return  Padding(
-     padding: const EdgeInsets.all(4.0),
-     child: ListView(
-        children: <Widget> [PublicAppBar(title: 'History')],
+    return Padding(
+      padding: const EdgeInsets.only(left: 3, right: 2),
+      child: ListView(
+        children: <Widget>[
+          PublicAppBar(title: 'History'),
+          
+        ],
       ),
-   );
+    );
   }
 }

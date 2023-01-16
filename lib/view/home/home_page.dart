@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
+
 import '../../core/constants/constants.dart';
+import '../Widgets/title_public.dart';
 import 'widgets/appbar_home.dart';
 import 'widgets/carosal.dart';
 import 'widgets/row__doctorspeciality.dart';
-import 'widgets/small_title.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
                   suffixIcon: Icon(CupertinoIcons.sort_up),
                 )),
             const CurosalSliderHome(),
-            const SmallTitle(
+            const PublicSmallTitle(
               title: 'Doctor Speciality',
             ),
              const RowIconDoctorSpeciality()
