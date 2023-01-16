@@ -163,6 +163,6 @@ class MybottomNavBarState extends State<MybottomNavBar> {
     'Home',
     'Appointment',
     'History',
-    'Article',
+    'Articles',
   ];
 }

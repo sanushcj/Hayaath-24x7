@@ -1,13 +1,11 @@
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../core/Colors/mycolors.dart';
 import '../../core/constants/constants.dart';
 import '../Widgets/appbar_public.dart';
 import '../Widgets/title_public.dart';
+import 'widgets/trendingbox_article.dart';
 
 class ArticlePage extends StatelessWidget {
   const ArticlePage({super.key});
@@ -18,24 +16,19 @@ class ArticlePage extends StatelessWidget {
       padding: const EdgeInsets.only(left: 3, right: 2),
       child: Column(
         children: <Widget>[
-          PublicAppBar(title: 'Article'),
+          PublicAppBar(title: 'Articles'),
           const PublicSmallTitle(title: 'Trendings'),
           SizedBox(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height / 4.5,
+            width: MediaQuery.of(context).size.height / 1.22,
+            height: MediaQuery.of(context).size.height / 4,
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) => Container(
-                      decoration: BoxDecoration(
-                          color: Colors.primaries[
-                              Random().nextInt(Colors.primaries.length)][500],
-                          borderRadius: BorderRadius.circular(10)),
-                      width: 350,
-                    ),
+                itemBuilder: (BuildContext context, int index) => const TrendingSlideBox(),
                 separatorBuilder: (BuildContext context, int index) =>
                     rrWidth15,
                 itemCount: 10),
-          )
+                
+          ),const PublicSmallTitle(title: 'Articles')
         ],
       ),
     );
