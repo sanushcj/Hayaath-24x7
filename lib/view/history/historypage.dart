@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/Colors/mycolors.dart';
-import '../../core/constants/constants.dart';
 import '../Widgets/appbar_public.dart';
 
 class HistoryPage extends StatelessWidget {

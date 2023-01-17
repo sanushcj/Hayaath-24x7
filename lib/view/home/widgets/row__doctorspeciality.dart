@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../core/Colors/mycolors.dart';
 import '../../../core/constants/constants.dart';
-import '../home_page.dart';
 
 import 'doctor_speciality.dart';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../core/Colors/mycolors.dart';
 import 'userprofilee.dart';
 
 class HomeAppBar extends StatelessWidget {
