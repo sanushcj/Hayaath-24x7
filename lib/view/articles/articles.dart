@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:hayaath_24x7/view/articles/tabs/corona.dart';
+import 'package:hayaath_24x7/view/articles/tabs/food.dart';
+import 'package:hayaath_24x7/view/articles/tabs/lifstyle.dart';
+import 'package:hayaath_24x7/view/articles/tabs/medicaltab.dart';
+import 'package:hayaath_24x7/view/articles/tabs/newest.dart';
 import '../../core/Colors/mycolors.dart';
 import '../../core/constants/constants.dart';
 import '../Widgets/appbar_public.dart';
 import '../Widgets/title_public.dart';
 import 'widgets/trendingbox_article.dart';
 
-
 class ArticlePage extends StatelessWidget {
   const ArticlePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    
     return ListView(
       children: <Widget>[
         PublicAppBar(title: 'Articles'),
@@ -24,7 +27,7 @@ class ArticlePage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int index) =>
-                  const TrendingSlideBox(),
+                  TrendingSlideBox(indexx: index),
               separatorBuilder: (BuildContext context, int index) => rrWidth15,
               itemCount: 10),
         ),
@@ -68,8 +71,8 @@ class ArticlePage extends StatelessWidget {
                 Tab(
                   text: 'Food',
                 ),
- 
-                // Expanded(child: TabBarView(children:<StatelessWidget> [NewestTab(),HealthTab(),CoronaTab(),LifstyleTab(),FoodTab()],))
+
+             SizedBox(height: 500,width: 500,child: TabBarView(children:<StatelessWidget> [NewestTab(),HealthTab(),CoronaTab(),LifstyleTab(),FoodTab()],))
               ],
             ),
           ),

@@ -1,6 +1,4 @@
-// To parse this JSON data, do
-//
-//     final health = healthFromJson(jsonString);
+
 
 class Article {
     Article({
@@ -24,25 +22,25 @@ class Article {
     String? content;
 
     factory Article.fromJson(Map<String, dynamic> json) => Article(
-        source: Source.fromJson(json['source']),
-        author: json['author'] as String,
-        title: json['title']as String,
-        description: json['description']as String,
-        url: json['url']as String,
-        urlToImage: json['urlToImage']as String,
-        publishedAt: DateTime.parse(json['publishedAt']),
-        content: json['content']as String,
+        source: Source.fromJson(json["source"]),
+        author: json["author"],
+        title: json["title"],
+        description: json["description"],
+        url: json["url"],
+        urlToImage: json["urlToImage"],
+        publishedAt: DateTime.parse(json["publishedAt"]),
+        content: json["content"],
     );
 
     Map<String, dynamic> toJson() => {
-        'source': source.toJson(),
-        'author': author,
-        'title': title,
-        'description': description,
-        'url': url,
-        'urlToImage': urlToImage,
-        'publishedAt': publishedAt.toIso8601String(),
-        'content': content,
+        "source": source.toJson(),
+        "author": author,
+        "title": title,
+        "description": description,
+        "url": url,
+        "urlToImage": urlToImage,
+        "publishedAt": publishedAt.toIso8601String(),
+        "content": content,
     };
 }
 
@@ -61,7 +59,7 @@ class Source {
     );
 
     Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
+        "id": id,
+        "name": name,
     };
 }

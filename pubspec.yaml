@@ -39,6 +39,7 @@ dependencies:
   hive: null
   hive_flutter: null
   flutter_screenutil: ^5.6.0
+  http:
 
 dev_dependencies:
   build_runner: ^2.3.3
