@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '../../core/Colors/mycolors.dart';
 import '../../core/constants/constants.dart';
 import '../Widgets/appbar_public.dart';
 import '../Widgets/title_public.dart';
-import 'tabs/lifstyle.dart';
-import 'tabs/corona.dart';
-import 'tabs/food.dart';
-import 'tabs/medicaltab.dart';
-import 'tabs/newest.dart';
 import 'widgets/trendingbox_article.dart';
+
 
 class ArticlePage extends StatelessWidget {
   const ArticlePage({super.key});
@@ -73,7 +68,7 @@ class ArticlePage extends StatelessWidget {
                 Tab(
                   text: 'Food',
                 ),
-
+ 
                 // Expanded(child: TabBarView(children:<StatelessWidget> [NewestTab(),HealthTab(),CoronaTab(),LifstyleTab(),FoodTab()],))
               ],
             ),
