@@ -20,15 +20,14 @@ var loading = true.obs;
 
 GetHealthNews() async {
     http.Response healthReady = await http.get(Uri.parse(baseurl));
-    if (healthReady.statusCode == 200) {
+   try{ if (healthReady.statusCode == 200) {
       final dynamic bodyHealth = jsonDecode(healthReady.body);
       final List<dynamic> bodyH = await bodyHealth['articles'] ;
      healthAPIList.value =
           bodyH.map((dynamic item) => Article.fromJson(item)).toList();
           loading.value =false ;
-    } else {
-      // ignore: only_throw_errors
-      throw 'Article is empty Bruh';
+    }}catch(e){
+Get.snackbar('Check your connection', "$e");
     }
   }
   

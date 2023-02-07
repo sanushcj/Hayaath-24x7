@@ -18,7 +18,7 @@ class ContentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: rrPremiumBlue,p),
+      appBar: AppBar(backgroundColor: rrPremiumBlue,),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,

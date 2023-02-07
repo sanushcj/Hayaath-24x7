@@ -16,23 +16,25 @@ class HomePage extends StatelessWidget {
       child: SizedBox(
       //  height: MediaQuery.of(context).size.height,
       //  width: double.infinity,
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            const HomeAppBar(),
-            rrheight20,
-            const SizedBox(
-                height: 50,
-                width: double.infinity,
-                child: CupertinoSearchTextField(
-                  suffixIcon: Icon(CupertinoIcons.sort_up),
-                )),
-            const CurosalSliderHome(),
-            const PublicSmallTitle(
-              title: 'Doctor Speciality',
-            ),
-             const RowIconDoctorSpeciality()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              const HomeAppBar(),
+              rrheight20,
+              const SizedBox(
+                  height: 50,
+                  width: double.infinity,
+                  child: CupertinoSearchTextField(
+                    suffixIcon: Icon(CupertinoIcons.sort_up),
+                  )),
+              const CurosalSliderHome(),
+              const PublicSmallTitle(
+                title: 'Doctor Speciality',
+              ),
+               const RowIconDoctorSpeciality()
+            ],
+          ),
         ),
       ),
     );

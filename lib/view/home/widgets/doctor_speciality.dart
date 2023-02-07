@@ -33,9 +33,13 @@ class IconDoctorSpeciality extends StatelessWidget {
               child: Stack(
                 alignment: AlignmentDirectional.center,
                 children: <Widget>[
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundColor: rrPremiumBlue.withOpacity(0.2),
+                  Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: rrPremiumBlue.withOpacity(0.15),
+                    ),
                   ),
                   Align(
                       child: Icon(
