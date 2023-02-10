@@ -10,14 +10,12 @@ int? lengthofTrendings;
 class TrendingSlideBox extends StatelessWidget {
   TrendingSlideBox({super.key, required this.indexx});
   int indexx;
+  final HealthApi client = Get.find();
 
-  HealthApi client = Get.put(HealthApi());
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => client.loading.value == true
-          ? const CircularProgressIndicator()
-          : InkWell(
+      () =>  InkWell(
               onTap: () => Get.to(ContentScreen(
                 content: client.healthAPIList[indexx].content.toString(),
                 img: client.healthAPIList[indexx].urlToImage.toString(),

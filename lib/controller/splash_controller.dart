@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import '../view/bottom_navigation/nav_bar.dart';
+import 'HealthAPI/Trending.dart';
 
 class SplashScreenController  extends GetxController{
  
@@ -15,5 +16,7 @@ Future<void> gotToHome() async {
     Get.to(
       () => const MybottomNavBar(),
     );
+
+
   }
 }

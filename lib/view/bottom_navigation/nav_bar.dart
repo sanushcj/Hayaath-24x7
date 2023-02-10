@@ -23,7 +23,7 @@ class MybottomNavBarState extends State<MybottomNavBar> {
     const HomePage(),
     const AppoinmentPage(),
     const HistoryPage(),
-    const ArticlePage()
+     ArticlePage()
   ];
   @override
   Widget build(BuildContext context) {
