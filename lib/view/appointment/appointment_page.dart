@@ -32,7 +32,7 @@ class AppoinmentPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(25.0)),
                     labelColor: rrWhite,
                     unselectedLabelColor: rrGrey,
-                    tabs: const <Tab> [
+                    tabs: const <Tab>[
                       Tab(
                         text: 'Upcoming',
                       ),
@@ -45,9 +45,13 @@ class AppoinmentPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Expanded(
+                 Expanded(
                   child: TabBarView(
-                    children: <StatelessWidget> [UpcomingTab(), CompletedTab(), CancelledTab()],
+                    children: <StatelessWidget>[
+                      UpcomingTab(),
+                      CompletedTab(),
+                      CancelledTab()
+                    ],
                   ),
                 ),
               ],
