@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../core/Colors/mycolors.dart';
-import '../../core/constants/constants.dart';
+import '../../../core/Colors/mycolors.dart';
+import '../../../core/constants/constants.dart';
 
 // ignore: must_be_immutable
 class PublicAppBar extends StatelessWidget {
@@ -14,7 +14,6 @@ class PublicAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height / 11,
         width: double.infinity,
         child: Row(
           children: <Widget>[
