@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hayaath_24x7/core/Colors/mycolors.dart';
-import 'package:hayaath_24x7/core/constants/constants.dart';
+import '../../../core/Colors/mycolors.dart';
+import '../../../core/constants/constants.dart';
 
 // ignore: must_be_immutable
 class ContentScreen extends StatelessWidget {
@@ -19,11 +19,11 @@ class ContentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: rrPremiumBlue,),
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
-          children: [
+          children: <Widget>  [
             InkWell(
               onTap: () => url,
               child: Container(
@@ -35,18 +35,18 @@ class ContentScreen extends StatelessWidget {
             ),
             ListView(
               shrinkWrap: true,
-              children: [
+              children: <Widget> [
                 SizedBox(
                     width: double.infinity,
                     child: Text(
                       title,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 25, fontWeight: FontWeight.bold),
                     )),
                 rrheight10,
                 Text(
                   content,
-                  style: TextStyle(fontSize: 20,),
+                  style: const TextStyle(fontSize: 20,),
                 ),
               ],
             ),

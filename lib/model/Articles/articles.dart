@@ -12,15 +12,6 @@ class Article {
         this.content,
     });
 
-    Source source;
-    String? author;
-    String title;
-    String? description;
-    String url;
-    String? urlToImage;
-    DateTime publishedAt;
-    String? content;
-
     factory Article.fromJson(Map<String, dynamic> json) => Article(
         source: Source.fromJson(json['source']),
         author: json['author'],
@@ -32,7 +23,16 @@ class Article {
         content: json['content'],
     );
 
-    Map<String, dynamic> toJson() => {
+    Source source;
+    String? author;
+    String title;
+    String? description;
+    String url;
+    String? urlToImage;
+    DateTime publishedAt;
+    String? content;
+
+    Map<String, dynamic> toJson() =><String,dynamic> {
         'source': source.toJson(),
         'author': author,
         'title': title,
@@ -50,15 +50,15 @@ class Source {
         required this.name,
     });
 
+    factory Source.fromJson(Map<String, dynamic> json) => Source(
+        id: json['id'] as String,
+        name: json['name'] as String,
+    );
+
     String? id;
     String name;
 
-    factory Source.fromJson(Map<String, dynamic> json) => Source(
-        id: json['id'],
-        name: json['name'],
-    );
-
-    Map<String, dynamic> toJson() => {
+    Map<String, dynamic> toJson() => <String, dynamic>{
         'id': id,
         'name': name,
     };

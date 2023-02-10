@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hayaath_24x7/core/Colors/mycolors.dart';
-import 'package:hayaath_24x7/view/appointment/tabs/cancelled.dart';
-import 'package:hayaath_24x7/view/appointment/tabs/completed.dart';
-import 'package:hayaath_24x7/view/appointment/tabs/upcoming.dart';
-
+import '../../core/Colors/mycolors.dart';
 import '../Widgets/appbar/appbar_public.dart';
+import 'tabs/cancelled.dart';
+import 'tabs/completed.dart';
+import 'tabs/upcoming.dart';
 
 class AppoinmentPage extends StatelessWidget {
   const AppoinmentPage({super.key});
@@ -34,7 +32,7 @@ class AppoinmentPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(25.0)),
                     labelColor: rrWhite,
                     unselectedLabelColor: rrGrey,
-                    tabs: const [
+                    tabs: const <Tab> [
                       Tab(
                         text: 'Upcoming',
                       ),
@@ -47,9 +45,9 @@ class AppoinmentPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   child: TabBarView(
-                    children: [UpcomingTab(), CompletedTab(), CancelledTab()],
+                    children: <StatelessWidget> [UpcomingTab(), CompletedTab(), CancelledTab()],
                   ),
                 ),
               ],

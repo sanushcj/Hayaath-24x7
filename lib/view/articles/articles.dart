@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hayaath_24x7/view/articles/tabs/corona.dart';
-import 'package:hayaath_24x7/view/articles/tabs/food.dart';
-import 'package:hayaath_24x7/view/articles/tabs/lifstyle.dart';
-import 'package:hayaath_24x7/view/articles/tabs/medicaltab.dart';
-import 'package:hayaath_24x7/view/articles/tabs/newest.dart';
 import '../../core/Colors/mycolors.dart';
 import '../../core/constants/constants.dart';
 import '../Widgets/appbar/appbar_public.dart';
 import '../Widgets/title_public.dart';
+import 'tabs/corona.dart';
+import 'tabs/food.dart';
+import 'tabs/lifstyle.dart';
+import 'tabs/medicaltab.dart';
+import 'tabs/newest.dart';
 import 'widgets/trendingbox_article.dart';
 
 class ArticlePage extends StatelessWidget {
@@ -78,7 +78,7 @@ class ArticlePage extends StatelessWidget {
                     ),
                   ],
                 )),
-            Expanded(
+            const Expanded(
                 child: SizedBox(
               child: TabBarView(
                 children: <StatelessWidget>[

@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hayaath_24x7/controller/HealthAPI/Trending.dart';
-import 'package:hayaath_24x7/view/articles/content/contentscreen.dart';
+import '../../../controller/HealthAPI/trending.dart';
+import '../content/contentscreen.dart';
 
 int? lengthofTrendings;
 
@@ -11,18 +11,18 @@ class TrendingSlideBox extends StatelessWidget {
   TrendingSlideBox({super.key, required this.indexx});
   int indexx;
 
-  HealthApi Client = Get.put(HealthApi());
+  HealthApi client = Get.put(HealthApi());
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => Client.loading.value == true
-          ? CircularProgressIndicator()
+      () => client.loading.value == true
+          ? const CircularProgressIndicator()
           : InkWell(
               onTap: () => Get.to(ContentScreen(
-                content: Client.healthAPIList[indexx].content.toString(),
-                img: Client.healthAPIList[indexx].urlToImage.toString(),
-                title: Client.healthAPIList[indexx].title,
-                url: Client.healthAPIList[indexx].url,
+                content: client.healthAPIList[indexx].content.toString(),
+                img: client.healthAPIList[indexx].urlToImage.toString(),
+                title: client.healthAPIList[indexx].title,
+                url: client.healthAPIList[indexx].url,
               )),
               child: Column(
                 children: <Widget>[
@@ -32,7 +32,7 @@ class TrendingSlideBox extends StatelessWidget {
                             Random().nextInt(Colors.primaries.length)][500],
                         image: DecorationImage(
                             image: NetworkImage(
-                              Client.healthAPIList[indexx].urlToImage
+                              client.healthAPIList[indexx].urlToImage
                                   .toString(),
                             ),
                             fit: BoxFit.cover),
@@ -45,8 +45,8 @@ class TrendingSlideBox extends StatelessWidget {
                     child: SizedBox(
                         width: MediaQuery.of(context).size.height / 2.5,
                         child: Text(
-                          Client.healthAPIList[indexx].title,
-                          style: TextStyle(
+                          client.healthAPIList[indexx].title,
+                          style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 18),
                           overflow: TextOverflow.ellipsis,
                         )),

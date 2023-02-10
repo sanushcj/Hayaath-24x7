@@ -1,24 +1,24 @@
 import 'dart:convert';
 import 'package:get/get.dart';
-import '../../model/Articles/articles.dart';
 import 'package:http/http.dart' as http;
+import '../../model/Articles/articles.dart';
 import '../../services/trending/api.dart';
 
 class HealthApi extends GetxController {
 
-var healthAPIList = <Article>[].obs;
-var loading = true.obs;
+RxList<Article> healthAPIList = <Article>[].obs;
+RxBool loading = true.obs;
 
 @override
   void onInit() {
-    GetHealthNews();
+    getHealthNews();
     super.onInit();
   }
   
   String baseurl =
-      "https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=$healthAPIKey";
+      'https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=$healthAPIKey';
 
-GetHealthNews() async {
+Future<void> getHealthNews() async {
     http.Response healthReady = await http.get(Uri.parse(baseurl));
    try{ if (healthReady.statusCode == 200) {
       final dynamic bodyHealth = jsonDecode(healthReady.body);
@@ -27,7 +27,7 @@ GetHealthNews() async {
           bodyH.map((dynamic item) => Article.fromJson(item)).toList();
           loading.value =false ;
     }}catch(e){
-Get.snackbar('Check your connection', "$e");
+Get.snackbar('Check your connection', '$e');
     }
   }
   
