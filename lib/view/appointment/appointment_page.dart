@@ -42,7 +42,7 @@ class AppoinmentPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const Expanded(
+               Expanded(
                 child: TabBarView(
                   children: [UpcomingTab(), CompletedTab(), CancelledTab()],
                 ),

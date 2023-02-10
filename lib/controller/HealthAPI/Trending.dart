@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import '../../model/Articles/articles.dart';
 import 'package:http/http.dart' as http;
-import '../../services/healthAPI/api.dart';
+import '../../services/trending/api.dart';
 
 class HealthApi extends GetxController {
 

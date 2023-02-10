@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:lottie/lottie.dart';
+
 
 class UpcomingTab extends StatelessWidget {
-  const UpcomingTab({super.key});
-
+   UpcomingTab({super.key});
+var _data =null;
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('data1'),);
+
+    return 
+    _data == null ? Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Lottie.asset('lib/assets/animations/noappointment.json',
+        fit: BoxFit.cover,height: 300,
+        ),
+        Text('You dont have the appointment yet',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),)
+      ],
+    ) : Center(child: Text('data'),);
   }
 }
