@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:hayaath_24x7/view/booking%20screen/book_appoinment.dart';
 import '../../../core/Colors/mycolors.dart';
 
 class AppointmentTile extends StatelessWidget {
@@ -117,16 +119,19 @@ final Color colors;
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  alignment: Alignment.center,
-                  height: 32,
-                  width: 180,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: rrPremiumBlue),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Text(
-                    'Book Again',
-                    style: TextStyle(color: rrPremiumBlue, fontSize: 15),
+                InkWell(
+                  onTap: () => Get.to(BookingAppointmentScreen()),
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 32,
+                    width: 180,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: rrPremiumBlue),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Text(
+                      'Book Again',
+                      style: TextStyle(color: rrPremiumBlue, fontSize: 15),
+                    ),
                   ),
                 ),
                 Container(
