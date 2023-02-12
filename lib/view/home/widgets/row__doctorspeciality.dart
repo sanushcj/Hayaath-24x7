@@ -13,7 +13,7 @@ class RowIconDoctorSpeciality extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       // color: rrGrey,
-      height: MediaQuery.of(context).size.height/3.3,
+      height: MediaQuery.of(context).size.height/3.2,
       width: double.infinity,
       child: Column(
         children: <Widget> [

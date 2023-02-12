@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../../../core/Colors/mycolors.dart';
-import '../../../core/constants/constants.dart';
 
 class AppointmentTile extends StatelessWidget {
   const AppointmentTile({
@@ -20,18 +18,20 @@ final Color colors;
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: rrWhite,
+          color: rrGrey,
         ),
         height: MediaQuery.of(context).size.height / 5,
         width: double.infinity,
         child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, right: 8),
+                  padding: const EdgeInsets.only(top: 10,),
                   child: Container(
                     height: 100,
                     width: 100,
@@ -51,18 +51,19 @@ final Color colors;
                     top: 18,right: 0
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
                         width: 200,
                         child: Text(
-                          'Dr.$docName',
+                          'Dr.$docName',overflow: TextOverflow.clip,
                           style: TextStyle(
                               fontWeight: FontWeight.w600, fontSize: 18),
                         ),
                       ),
-                      rrheight05,
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
                             'Video Call  - ',
@@ -100,28 +101,25 @@ final Color colors;
                     ],
                   ),
                 ),
-                rrWidth15,
-                Padding(
-                  padding: EdgeInsets.only(top: 35),
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: CircleAvatar(
-                      backgroundColor: rrPremiumBlue.withOpacity(0.2),
-                      child: Icon(FontAwesomeIcons.video,color: rrPremiumBlue,),
-                    ),
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: CircleAvatar(
+                    backgroundColor: rrPremiumBlue.withOpacity(0.2),
+                    child: Icon(FontAwesomeIcons.video,color: rrPremiumBlue,),
                   ),
                 ),
               ],
             ),
             Divider(),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   alignment: Alignment.center,
                   height: 32,
-                  width: 190,
+                  width: 180,
                   decoration: BoxDecoration(
                       border: Border.all(color: rrPremiumBlue),
                       borderRadius: BorderRadius.circular(10)),
@@ -130,11 +128,10 @@ final Color colors;
                     style: TextStyle(color: rrPremiumBlue, fontSize: 15),
                   ),
                 ),
-                rrWidth10,
                 Container(
                   alignment: Alignment.center,
                   height: 32,
-                  width: 190,
+                  width: 180,
                   decoration: BoxDecoration(
                       color: rrPremiumBlue,
                       borderRadius: BorderRadius.circular(10)),

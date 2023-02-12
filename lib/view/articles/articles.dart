@@ -13,13 +13,12 @@ import 'tabs/medicaltab.dart';
 import 'tabs/newest.dart';
 import 'widgets/trendingbox_article.dart';
 
-  final HealthApi client = Get.find();
+final HealthApi client = Get.find();
 
 // ignore: must_be_immutable
 class ArticlePage extends StatelessWidget {
-   ArticlePage({super.key});
-        HealthApi controller = Get.put(HealthApi());
-
+  ArticlePage({super.key});
+  HealthApi controller = Get.put(HealthApi());
 
   @override
   Widget build(BuildContext context) {
@@ -35,25 +34,25 @@ class ArticlePage extends StatelessWidget {
           length: 5,
           child: Column(children: <Widget>[
             const PublicSmallTitle(title: 'Trendings'),
-           Obx(
-            () => 
-               client.loading.value == true ?  SizedBox(height: MediaQuery.of(context).size.height / 4,
-               child : const CupertinoActivityIndicator()) :
-                SizedBox(
-                  width: MediaQuery.of(context).size.height / 1.22,
-                  height: MediaQuery.of(context).size.height / 4,
-                  child: ListView.separated(
-                      shrinkWrap: true,
-                      physics: const BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (BuildContext context, int index) =>
-                          TrendingSlideBox(indexx: index),
-                      separatorBuilder: (BuildContext context, int index) =>
-                          rrWidth15,
-                      itemCount: 20),
-                ),
-            
-           ),
+            Obx(
+              () => client.loading.value == true
+                  ? SizedBox(
+                      height: MediaQuery.of(context).size.height / 4,
+                      child: const CupertinoActivityIndicator())
+                  : SizedBox(
+                      width: MediaQuery.of(context).size.height / 1.22,
+                      height: MediaQuery.of(context).size.height / 4,
+                      child: ListView.separated(
+                          shrinkWrap: true,
+                          physics: const BouncingScrollPhysics(),
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, int index) =>
+                              TrendingSlideBox(indexx: index),
+                          separatorBuilder: (BuildContext context, int index) =>
+                              rrWidth15,
+                          itemCount: 20),
+                    ),
+            ),
             const PublicSmallTitle(title: 'Articles'),
             SizedBox(
                 width: double.infinity,
