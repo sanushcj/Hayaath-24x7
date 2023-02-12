@@ -55,6 +55,7 @@ final Color colors;
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
+                        height: 21,
                         width: 200,
                         child: Text(
                           'Dr.$docName',overflow: TextOverflow.clip,
