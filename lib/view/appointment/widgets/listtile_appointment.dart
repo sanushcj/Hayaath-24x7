@@ -18,7 +18,7 @@ final Color colors;
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: rrGrey,
+          color: rrWhite,
         ),
         height: MediaQuery.of(context).size.height / 5,
         width: double.infinity,
