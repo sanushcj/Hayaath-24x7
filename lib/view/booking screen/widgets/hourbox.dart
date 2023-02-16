@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hayaath_24x7/controller/bookingscreen/bookingscreencontroller.dart';
@@ -14,7 +12,6 @@ class HourContainerWidget extends StatelessWidget {
   });
   final int indexofthewidget;
   BookingScreenController controller = Get.put(BookingScreenController());
-  RxBool tap = false.obs;
 
   final String time;
   // String?;
@@ -26,11 +23,8 @@ class HourContainerWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
         // autofocus: true,
         onTap: () {
-          controller1.thakkudu(indexofthewidget);
-                  log('gokul Kannurrr');
-print(controller1.boollist[indexofthewidget]);
-          // controller.boollist[indexofthewidget] = true;
-        },
+          controller1.timeSelect(indexofthewidget);
+          },
         child: Container(
           alignment: Alignment.center,
           height: 50,
