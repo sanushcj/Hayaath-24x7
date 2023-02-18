@@ -1,20 +1,22 @@
+
+
+// int indexofPatient=0;
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hayaath_24x7/core/Colors/mycolors.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'widgets/hourbox.dart';
-import 'widgets/nextelevatedbutton.dart';
+
+import '../../../controller/bookingscreen/bookingscreencontroller.dart';
+import '../../../core/Colors/mycolors.dart';
+import '../widgets/hourbox.dart';
+import '../widgets/nextelevatedbutton.dart';
+
+BookingScreenController bookingScreenController = Get.find();
 
 // ignore: must_be_immutable
 class BookingAppointmentScreen extends StatelessWidget {
   BookingAppointmentScreen({super.key});
-
-  Rx<DateTime> today = DateTime.now().obs;
-    void _ondaySelected(DateTime day, DateTime focusedDay) {
-  today.value = day;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +53,7 @@ class BookingAppointmentScreen extends StatelessWidget {
                     color: rrBlack, fontSize: 20, fontWeight: FontWeight.w500),
               ),
               Obx(
-                () =>  Container(
+                () => Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -59,11 +61,12 @@ class BookingAppointmentScreen extends StatelessWidget {
                   ),
                   child: TableCalendar(
                       availableGestures: AvailableGestures.all,
-                      selectedDayPredicate: (day) => isSameDay(day, today.value),
-                      onDaySelected: _ondaySelected ,
+                      selectedDayPredicate: (day) =>
+                          isSameDay(day, bookingScreenController.today.value),
+                      onDaySelected: bookingScreenController. ondaySelected,
                       rowHeight: 50,
-                      focusedDay: today.value,
-                      firstDay: DateTime.utc(today.value.year),
+                      focusedDay: bookingScreenController.today.value,
+                      firstDay: DateTime.utc(bookingScreenController.today.value.year),
                       lastDay: DateTime(2025)),
                 ),
               ),
@@ -78,20 +81,19 @@ class BookingAppointmentScreen extends StatelessWidget {
                   spacing: 8,
                   runSpacing: 8,
                   children: List.generate(
-                      12,
+                      BookingScreenController.availabilityTime.length,
                       (index) => HourContainerWidget(
-                            time: '10 : 4',
+                            time:
+                                BookingScreenController.availabilityTime[index],
                             indexofthewidget: index,
                           )),
                 ),
               ),
-              NextElevatedButton(),
+           NextElevatedButton(),
             ],
           ),
         ),
       ),
     );
   }
-
-
 }

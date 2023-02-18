@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 import '../view/bottom_navigation/nav_bar.dart';
-import 'bookingscreen/bookingscreencontroller.dart';
-
 class SplashScreenController  extends GetxController{
  
  @override
@@ -16,7 +14,6 @@ Future<void> gotToHome() async {
     Get.to(
       () => const MybottomNavBar(),
     );
-  BookingScreenController controller = Get.put(BookingScreenController());
 
 
   }

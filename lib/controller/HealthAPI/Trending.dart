@@ -23,7 +23,6 @@ Future<void> getHealthNews() async {
 
     http.Response healthReady = await http.get(Uri.parse(baseurl));
    try{ if (healthReady.statusCode == 200) {
-    log('got your data ${healthReady.body}');
       final dynamic bodyHealth = jsonDecode(healthReady.body);
       final List<dynamic> bodyH = await bodyHealth['articles'] ;
      healthAPIList.value =

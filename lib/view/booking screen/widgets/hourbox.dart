@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hayaath_24x7/controller/bookingscreen/bookingscreencontroller.dart';
+import '../../../controller/bookingscreen/bookingscreencontroller.dart';
 import '../../../core/Colors/mycolors.dart';
 
 // ignore: must_be_immutable
@@ -12,7 +12,6 @@ class HourContainerWidget extends StatelessWidget {
   });
   final int indexofthewidget;
   BookingScreenController controller = Get.put(BookingScreenController());
-
   final String time;
   // String?;
   @override
@@ -23,7 +22,7 @@ class HourContainerWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
         // autofocus: true,
         onTap: () {
-          controller1.timeSelect(indexofthewidget);
+ controller1.timeSelect(indexofthewidget);
           },
         child: Container(
           alignment: Alignment.center,

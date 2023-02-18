@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:hayaath_24x7/view/booking%20screen/book_appoinment.dart';
 import '../../../core/Colors/mycolors.dart';
+import '../../booking screen/date_screen/dateandtime.dart';
 
 class AppointmentTile extends StatelessWidget {
   const AppointmentTile({
