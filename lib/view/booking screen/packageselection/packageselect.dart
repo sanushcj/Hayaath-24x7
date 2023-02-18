@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hayaath_24x7/view/booking%20screen/packageselection/dropdownmenuduration.dart';
+import 'package:hayaath_24x7/view/booking%20screen/widgets/radiobuttonofpackage.dart';
 import '../../../core/Colors/mycolors.dart';
 
 class PackageScreen extends StatelessWidget {
@@ -58,7 +59,9 @@ class PackageScreen extends StatelessWidget {
                       color: rrBlack,
                       fontSize: 20,
                       fontWeight: FontWeight.w500),
-                )
+                ),
+RadioButtonAdvancedWidget()
+
               ],
             )),
       ),
