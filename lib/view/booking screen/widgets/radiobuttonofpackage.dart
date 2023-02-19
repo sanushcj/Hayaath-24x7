@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:hayaath_24x7/core/constants/constants.dart';
 
-class RadioButtonAdvancedWidget extends StatefulWidget {
-  @override
-  _RadioButtonAdvancedWidgetState createState() =>
-      _RadioButtonAdvancedWidgetState();
-}
+// ignore: must_be_immutable
+class RadioButtonAdvancedWidget extends StatelessWidget {
 
-class _RadioButtonAdvancedWidgetState extends State<RadioButtonAdvancedWidget> {
+
+List<Widget> IconsofPackage = [
+  CircleAvatar(radius: 50,child: Icon(FontAwesomeIcons.message)),
+  CircleAvatar(radius: 50,child: Icon(FontAwesomeIcons.voicemail)),
+    CircleAvatar(radius: 50,child: Icon(FontAwesomeIcons.solidFileVideo)),
+
+];
+
   static const users = [
     User(
       name: 'Message',
@@ -23,27 +29,16 @@ class _RadioButtonAdvancedWidgetState extends State<RadioButtonAdvancedWidget> {
     ),
   ];
 
-  User selectedValue = users.first;
+  Rx<User> selectedValue = users.first.obs;
 
   @override
-  Widget build(BuildContext context) => ListView(
-      padding: EdgeInsets.symmetric(vertical: 16),
-      children: users
-          .map((user) => Container(
-                margin: EdgeInsets.only(bottom: 16),
-                child: RadioListTile<User>(
-                  value: user,
-                  onChanged: (value) => setState(() => selectedValue = value!),
-                  groupValue: selectedValue,
-                  title: Text(user.name),
-                  subtitle: Text(user.description),
-                  secondary: OutlinedButton(
-                    child: Text('View Profile'),
-                    onPressed: () {},
-                  ),
-                ),
-              ))
-          .toList());
+  Widget build(BuildContext context) => Obx(
+        () => ListView.separated(
+          shrinkWrap: true,
+            itemBuilder: (context, index) => ListTile(leading: IconsofPackage[index] ,title:Text(users[index].name) ,subtitle: Text(users[index].description) ,),
+            separatorBuilder: (context, index) => rrheight20,
+            itemCount: 3),
+      );
 }
 
 class User {
