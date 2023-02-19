@@ -5,14 +5,11 @@ import 'package:hayaath_24x7/core/constants/constants.dart';
 
 // ignore: must_be_immutable
 class RadioButtonAdvancedWidget extends StatelessWidget {
-
-
-List<Widget> IconsofPackage = [
-  CircleAvatar(radius: 50,child: Icon(FontAwesomeIcons.message)),
-  CircleAvatar(radius: 50,child: Icon(FontAwesomeIcons.voicemail)),
-    CircleAvatar(radius: 50,child: Icon(FontAwesomeIcons.solidFileVideo)),
-
-];
+  List<Widget> IconsofPackage = [
+    CircleAvatar(radius: 50, child: Icon(FontAwesomeIcons.message)),
+    CircleAvatar(radius: 50, child: Icon(FontAwesomeIcons.phone)),
+    CircleAvatar(radius: 50, child: Icon(FontAwesomeIcons.video)),
+  ];
 
   static const users = [
     User(
@@ -29,16 +26,25 @@ List<Widget> IconsofPackage = [
     ),
   ];
 
-  Rx<User> selectedValue = users.first.obs;
+  var selectedValue = 1.obs;
 
   @override
-  Widget build(BuildContext context) => Obx(
-        () => ListView.separated(
-          shrinkWrap: true,
-            itemBuilder: (context, index) => ListTile(leading: IconsofPackage[index] ,title:Text(users[index].name) ,subtitle: Text(users[index].description) ,),
-            separatorBuilder: (context, index) => rrheight20,
-            itemCount: 3),
-      );
+  Widget build(BuildContext context) => 
+  // Obx(() => 
+  ListView.separated(
+      shrinkWrap: true,
+      itemBuilder: (context, index) => ListTile(
+          leading: IconsofPackage[index],
+          title: Text(users[index].name),
+          subtitle: Text(users[index].description),
+          trailing: Radio(
+            value: IconsofPackage[0],
+            groupValue: selectedValue,
+            onChanged: (value) => this.selectedValue.value = index
+          ),),
+      separatorBuilder: (context, index) => rrheight20,
+      itemCount: 3);
+      // );
 }
 
 class User {
